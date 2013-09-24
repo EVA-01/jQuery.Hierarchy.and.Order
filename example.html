@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Hierarchy and Order</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="Length.js"></script>
+<script type="text/javascript" src="jquery.hao.min.js"></script>
+<style>
+.blue {
+ background-color:#0567af;
+ border:1px solid #034998;
+ padding:1cm;
+ border-radius:5px;
+ font-family:'Open Sans';
+ color:#ceced6;
+ box-shadow:0px 0px 10px #0550aa inset;
+ text-shadow:0px 1px #0550aa;
+}
+#lipsum {
+ width:400px;
+}
+#passion {
+ width:100px;
+ position:fixed;
+ top:300px;
+ left:600px;
+}
+#magic {
+ position:absolute;
+ left:2000px;
+ top:25px;
+}
+#ymir {
+ position:fixed;
+ top:300px;
+ left:892px;
+ width:100px;
+ border-radius:5px;
+ border:6px solid #0567af;
+}
+#a {
+ position:relative;
+ top:0px;
+ left:0px;
+ text-shadow:0px 1px #0550aa, 0px -1px #0567af, 1px 0px #0567af, -1px 0px #0567af, 0px 2px #0567af, 0px -2px #0567af, 2px 0px #0567af, -2px 0px #0567af;
+}
+body {
+ background-image:url(http://24.media.tumblr.com/10240baa933ee0cf7f669f9a01b71ac2/tumblr_mrrdzgWYz01qcg8goo1_500.png);
+ background-attachment:fixed;
+}
+</style>
+<script type="text/javascript">
+ $(document).ready(function() {
+  $('body').layered({background:true, distance:5});
+  $('#passion').layered({position:true, distance:-5});
+  $('#a').layered({position:true, distance:5, endScrollY:Infinity, startScrollX:Infinity});
+ });
+</script>
+</head>
+<body title="My background changes positions at a speed of 5 (1/5 the speed of the scroll) both horizontally and vertically.">
+<div id="passion" class="blue" title="I travel at a speed of -5 (1/5 the speed of the scroll and the opposite direction). I travel horizontally and vertically.">
+Take <span id="a" title="I travel at a speed of 5 (1/5 the speed of the scroll). I only travel vertically. It appears that I'm staying still but I'm actually moving away from/toward my element at the same speed it's traveling.">a</span> walk!
+</div>
+<div id="magic" class="blue" title="I don't do anything because I don't want to >:(">
+Black magic
+</div>
+<div id="lipsum" class="blue" title="I'm too lazy to be layered so I go with the flow.">
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae molestie mi, eu laoreet justo. Suspendisse vitae justo egestas, volutpat diam fringilla, semper mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sollicitudin nulla ut velit placerat ornare. Integer consequat semper nulla, sit amet interdum erat facilisis porttitor. Mauris rhoncus magna sit amet tortor bibendum, in auctor metus tempor. Ut molestie, elit in tempor viverra, turpis massa mattis erat, vel vehicula lorem augue eget sapien. Nam hendrerit at eros ut bibendum. Fusce dictum risus ut turpis vestibulum hendrerit. Vivamus non tellus metus. Praesent arcu arcu, adipiscing ac imperdiet eget, eleifend id nisl. Fusce lacinia, sapien eu tristique elementum, sem elit vestibulum ligula, et tempus sem purus id metus. Praesent eleifend ac felis at egestas. Maecenas dictum in ipsum sit amet semper. Cras in ligula semper, sodales magna sit amet, vehicula eros.
+</p>
+<p>
+Ut scelerisque, est id aliquet rutrum, sapien felis egestas quam, varius fringilla metus nisl eget neque. Nunc semper augue nec urna auctor, a fringilla sapien volutpat. Vestibulum massa nulla, tincidunt ut tellus nec, suscipit tempus sem. Quisque consequat justo nibh, at ullamcorper dolor faucibus gravida. Nam sit amet nisl diam. Nam ante ante, feugiat sed nisl in, aliquet lacinia mauris. In hac habitasse platea dictumst. Nunc in dui eu ipsum tristique tincidunt. Aenean laoreet, tellus non imperdiet euismod, nisl orci ornare tellus, vitae venenatis nulla leo sed urna. Nunc tincidunt lorem vitae risus molestie luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent luctus fermentum fermentum. Ut egestas a neque id egestas. Fusce sollicitudin, purus ut ullamcorper porttitor, est magna tempus lorem, vel sollicitudin purus sem sit amet enim.
+</p>
+<p>
+Etiam congue metus eu arcu consectetur commodo. Proin non hendrerit magna, et vestibulum felis. Sed quis nunc mauris. Aenean tristique quam eu porta commodo. Nullam sodales molestie iaculis. Donec varius dolor eu odio iaculis convallis. Duis eros nisl, malesuada volutpat tincidunt et, lobortis at libero. Proin placerat ipsum ac varius sodales.
+</p>
+<p>
+In in velit odio. Curabitur nisi ligula, cursus id neque ut, fermentum porttitor massa. Ut ac dui pellentesque, sodales massa eu, volutpat mauris. Quisque porta, lorem vel pharetra posuere, tellus velit lacinia erat, ullamcorper rutrum magna felis eget tortor. Sed vitae justo mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla molestie dignissim enim, at ultricies turpis commodo a. Etiam condimentum eros vel gravida ullamcorper. Curabitur pulvinar dui eros, quis pharetra magna porta eu. Vivamus bibendum sem ut condimentum fermentum. Morbi rhoncus gravida faucibus. Sed sit amet consectetur diam. Aenean tellus diam, commodo et porttitor vitae, varius et neque. Aliquam erat volutpat.
+</p>
+<p>
+Aenean id ultrices nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse eleifend euismod mauris a consectetur. Duis auctor tincidunt pretium. Quisque vel mi a velit consequat posuere. Donec interdum euismod accumsan. Morbi eget felis a lorem vulputate consectetur. Nam velit justo, euismod nec tellus eu, auctor egestas metus. Cras est mauris, dignissim vitae orci nec, viverra tincidunt sem. Morbi fringilla ultricies suscipit. Pellentesque sagittis ante adipiscing turpis varius interdum. Etiam ut sodales eros, nec semper lacus. Proin accumsan justo non sem hendrerit congue. Sed turpis urna, semper in odio at, semper cursus nisl.
+</p>
+<p>
+Morbi felis odio, blandit eu dui quis, suscipit suscipit tortor. In ac odio dignissim, commodo purus in, tempus felis. Vestibulum interdum nisi vitae est pellentesque congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam ornare venenatis turpis, vitae adipiscing nisi faucibus sed. Proin odio velit, vehicula id lorem eu, ullamcorper consequat est. In nec fringilla ante.
+</p>
+<p>
+Mauris consectetur fringilla metus. Donec consectetur arcu ac lorem tempus, et volutpat justo varius. Suspendisse mi enim, rutrum quis quam mattis, malesuada consequat diam. Vestibulum fermentum faucibus turpis, pharetra rutrum metus adipiscing quis. Duis aliquam risus ullamcorper tortor posuere, at facilisis urna aliquam. Mauris pretium a tellus eget tincidunt. Maecenas nisl dui, tempus nec odio at, semper ultrices mi. In molestie quis metus vitae venenatis. Maecenas sapien enim, pharetra in dui id, lobortis suscipit arcu. Praesent consectetur tellus erat, sit amet sagittis magna tincidunt eu. Donec egestas id tellus non molestie. Suspendisse potenti. Praesent eleifend nisl eget mi sollicitudin, vitae scelerisque felis pulvinar.
+</p>
+<p>
+Vivamus adipiscing vitae ipsum non iaculis. Vivamus scelerisque purus varius, pretium arcu ut, rutrum augue. Aliquam vitae semper nulla. Nulla dignissim quam vel turpis porta, a porttitor nunc lacinia. In mattis felis eget nunc eleifend adipiscing. Praesent ultrices blandit nisl sit amet sollicitudin. Fusce ac hendrerit dolor. Curabitur ut adipiscing dui, vel fringilla diam. Sed laoreet vitae tellus vel dapibus. Vestibulum enim mauris, pellentesque ac nisl a, commodo sodales metus. Suspendisse eu feugiat magna. Nullam libero quam, eleifend non luctus ut, varius id purus. Pellentesque placerat consectetur enim sit amet blandit. Sed commodo ante non pellentesque dignissim.
+</p>
+<p>
+Vivamus libero augue, pulvinar nec ante et, semper aliquet elit. Donec tristique metus in tempor egestas. Donec ac feugiat felis. Aenean a condimentum nunc. Nullam eleifend lorem in scelerisque adipiscing. Fusce sed risus at magna luctus tempus. Vivamus vehicula, eros id condimentum volutpat, lectus nunc aliquet metus, eget dictum neque magna at tellus. Nulla non justo eget ante varius pharetra vel sed velit. Aenean iaculis pharetra diam vitae blandit. Pellentesque ut convallis nibh, eu sodales sem. Sed lacinia sollicitudin facilisis. In hac habitasse platea dictumst.
+</p>
+<p>
+Nulla ut metus vel massa rutrum interdum ornare ac arcu. Morbi sed ultrices magna. Ut egestas, odio sit amet faucibus dictum, lectus enim bibendum enim, sed euismod tortor augue quis tellus. Suspendisse potenti. Phasellus eleifend velit ut arcu viverra gravida. Etiam imperdiet, nunc eu dictum adipiscing, eros enim ultrices enim, vitae gravida nulla lacus tempor tellus. Mauris ultricies tellus sed massa faucibus, eget imperdiet sem vestibulum. Sed a est et nisi aliquam euismod. Sed nulla lacus, adipiscing a nibh et, sodales imperdiet eros. In a mollis nisl.
+</p></div>
+</body>
+</html>
