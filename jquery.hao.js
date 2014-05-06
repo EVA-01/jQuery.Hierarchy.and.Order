@@ -1,14 +1,14 @@
 /* Hierarchy and Order */
 jQuery.fn.layered=function(o) {
-	o=jQuery.extend({background:false, position:false, distance:1, startScrollY:0, endScrollY:Infinity, startScrollX:0, endScrollX:Infinity}, o);
+	var o=jQuery.extend({background:false, position:false, distance:1, startScrollY:0, endScrollY:Infinity, startScrollX:0, endScrollX:Infinity}, o);
 	if(jQuery.type(jQuery['layeredData'])=="array") {
 		jQuery['layeredData'].push({what:jQuery(this), o:o});
 	} else {
 		jQuery['layeredData']=[{what:jQuery(this), o:o}];
 		jQuery(window).scroll(function(e) {
 			jQuery.each(jQuery['layeredData'], function() {
-				t={};
-				cs={};
+				var t={};
+				var cs={};
 				if(this.o.position==true) {
 					if(this.o.endScrollY>=jQuery(window).scrollTop() && jQuery(window).scrollTop()>=this.o.startScrollY) {
 						cs=jQuery.extend(cs, {top: Length.toPx(jQuery(this.what)[0], jQuery(this.what).data('hierarchyAndOrder').position.top)+(-jQuery(window).scrollTop()+this.o.startScrollY)*Math.pow(this.o.distance, (-1))});
@@ -18,19 +18,19 @@ jQuery.fn.layered=function(o) {
 					}
 				}
 				if(this.o.background==true) {
-					x=false;
-					y=false;
+					var x=false;
+					var y=false;
 					if(this.o.endScrollY>=jQuery(window).scrollTop() && jQuery(window).scrollTop()>=this.o.startScrollY) {
 						y=(0-jQuery(window).scrollTop()+this.o.startScrollY);
 					}
 					if(this.o.endScrollX>=jQuery(window).scrollLeft() && jQuery(window).scrollTop()>=this.o.startScrollX) {
 						x=(0-jQuery(window).scrollLeft()+this.o.startScrollX);
 					}
-					bp=jQuery(this.what).data('hierarchyAndOrder').backgroundPosition;
-					cX=bp.xI+bp.xU;
-					cY=bp.yI+bp.yU;
+					var bp=jQuery(this.what).data('hierarchyAndOrder').backgroundPosition;
+					var cX=bp.xI+bp.xU;
+					var cY=bp.yI+bp.yU;
 					if(x!=false) {
-						xF=0;
+						var xF=0;
 						switch(jQuery.type(bp.xU)) {
 							case "string":
 								// Absolute or absolutely relative positions
@@ -49,7 +49,7 @@ jQuery.fn.layered=function(o) {
 						cX=(xF+x*Math.pow(this.o.distance, (-1)))+"px";
 					}
 					if(y!=false) {
-						yF=0;
+						var yF=0;
 						switch(jQuery.type(bp.xU)) {
 							case "string":
 								// Absolute or absolutely relative positions
